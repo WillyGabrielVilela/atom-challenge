@@ -1,12 +1,9 @@
 import Image from "next/image";
-import { ButtonSearch, HeaderContainer, HeaderContent, NavContainer, SearchInput } from "./styles";
-import logoImg from "../../images/logo.svg"
-import searchImg from "../../images/search.svg"
+import { HeaderContainer, HeaderContent } from "./styles";
+
 import arrowRight from "../../images/arrow-right.svg"
 import featuredImg from "../../images/featured-image.png"
 import { Poppins, Roboto } from "next/font/google";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "@/styles/theme/default";
 import { motion } from "framer-motion";
 
 const poppins = Poppins({ subsets: ['latin'], weight: "700" })
@@ -18,42 +15,9 @@ export const Header = () => {
     return (
         <>
             <HeaderContainer className={roboto.className}>
-                <NavContainer>
-                    <Image
-                        id="header-img"
-                        src={logoImg}
-                        width={161}
-                        height={37}
-                        alt="Logo do The Blog."
-                    />
-                    <ul>
-                        <li> <a href="#home">Home</a></li>
-                        <li> <a href="#posts">Posts</a></li>
-                        <li> <a href="#categories">Categorias</a></li>
-                        <li> <a href="#footer">Contato</a></li>
-                    </ul>
+                
 
-                    <SearchInput>
-                        <input
-                            type="search"
-                            className="searchInput"
-                            placeholder="Buscar"
-                        />
-                        <ThemeProvider theme={defaultTheme}>
-                            <ButtonSearch type="submit">
-                                <Image
-                                    src={searchImg}
-                                    width={24}
-                                    height={24}
-                                    alt="Lupa de Pesquisa"
-                                />
-                            </ButtonSearch>
-                        </ThemeProvider>
-                    </SearchInput>
-
-                </NavContainer>
-
-                <HeaderContent id="#home">
+                <HeaderContent>
                     <motion.div
                         className="w-full lg:max-w-[530px]"
                         initial={{ opacity: 0, x: -100 }}
@@ -90,6 +54,7 @@ export const Header = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <Image
+                            className="figure"
                             src={featuredImg}
                             width={570}
                             height={346}

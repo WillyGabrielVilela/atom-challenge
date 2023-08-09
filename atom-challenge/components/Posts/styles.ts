@@ -9,7 +9,7 @@ export const PostsContainer = styled.main`
    background: ${({ theme }) => theme.colors["white"]};
 
 
-.figure h2, section h2, .posts-back h2 {
+.figure h2, section h2 {
   
   font-weight: 700;
   font-size: 24px;
@@ -18,9 +18,14 @@ export const PostsContainer = styled.main`
   color: ${({ theme }) => theme.colors["purple-bg"]};
 
   margin: 16px 0;
+  cursor: pointer;
 }
 
-.figure p, .figure figcaption, section p, .posts-back p {
+h2:hover {
+  text-decoration: underline;
+}
+
+.figure p, section p {
   
   font-weight: 400;
   font-size: 16px;
@@ -28,10 +33,20 @@ export const PostsContainer = styled.main`
   width: 569px;
 
   color: #000;
+  cursor: pointer;
+}
+
+p:hover {
+  text-decoration: underline;
 }
 
 .figure p {
   line-height: 24px;
+}
+
+figure:hover {
+  transition: 0.3s;
+  transform: scale(0.9);
 }
 
 section+section {
@@ -58,32 +73,3 @@ section p {
 
 `
 
-export const PostsContent = styled.div`
-background: ${({ theme }) => theme.colors["white"]};
-border-bottom: 6px solid ${({ theme }) => theme.colors.green};
-
-  .post {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 500px;
-  }
-
-  h2 {
-  color: ${({ theme }) => theme.colors["purple-bg"]};
-
-  }
-
-  p {
-  margin-top: 8px;
-  width: 370px;
-  height: 76px;
-
-}
-
-.post1, .post2, .post3, .post4 {
-  width: 370px;
-  height: 458px;
-}
-
-`
